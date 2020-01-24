@@ -30,23 +30,21 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+# make your list of installed apps look like this
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+	'papaya_app',
+	'django.contrib.contenttypes',
+	'django.contrib.sessions',
+	'django.contrib.staticfiles',
 ]
 
+# and make your list of middleware look like this
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+	'django.middleware.security.SecurityMiddleware',
+	'whitenoise.middleware.WhiteNoiseMiddleware',
+	'django.contrib.sessions.middleware.SessionMiddleware',
+	'django.middleware.common.CommonMiddleware',
+	'spa.middleware.SPAMiddleware'
 ]
 
 ROOT_URLCONF = 'papaya.urls'
@@ -118,3 +116,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+ 
+# add these lines at the bottom of the file
+STATIC_ROOT = os.path.join(BASE_DIR, 'client/dist/client/')
+STATICFILES_STORAGE = 'spa.storage.SPAStaticFilesStorage'
