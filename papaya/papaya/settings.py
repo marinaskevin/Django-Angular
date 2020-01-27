@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'w^qv)r_l)+635k!p#xn=s-%j##2e6m4l!t81!76afopc^m^1sf'
+SECRET_KEY = 'ylc)wgc0p00s&@luzn1dg(g2@sin5e3v_h^a_jd1y_6k=n)^xd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -62,6 +62,7 @@ DATABASES = {
     }
 }
 
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -80,7 +81,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
- 
 # add these lines at the bottom of the file
 STATIC_ROOT = os.path.join(BASE_DIR, 'client/dist/client/')
 STATICFILES_STORAGE = 'spa.storage.SPAStaticFilesStorage'
