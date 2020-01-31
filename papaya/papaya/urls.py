@@ -15,8 +15,8 @@ Including another URLconf
 """
 from django.urls import path
 from papaya_app.views import Papayas, PapayaDetails
- 
+
 urlpatterns = [
-    path( 'papaya', Papayas.as_view() ),    
+    path( 'papaya', Papayas.as_view() ),
     path( 'papaya/<int:papaya_id>', PapayaDetails.as_view() )
 ]

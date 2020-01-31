@@ -8,6 +8,8 @@ class Papayas(View):
     def get(self, request):
         return JsonResponse({'status': 'ok'})
     def post(self, request):
+        our_data = json.loads(request.body.decode())
+        print(our_data, type(our_data))
         return JsonResponse({'status': 'ok'})
 
 class PapayaDetails(View):
