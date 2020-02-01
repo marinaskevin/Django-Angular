@@ -36,6 +36,7 @@ INSTALLED_APPS = [
 	'django.contrib.contenttypes',
 	'django.contrib.sessions',
 	'django.contrib.staticfiles',
+        'django.contrib.auth'
 ]
 
 # and make your list of middleware look like this

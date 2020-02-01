@@ -1,12 +1,14 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.views import View
+from .models import Papaya
+import json
 
 # Create your views here.
 
 class Papayas(View):
     def get(self, request):
-        return JsonResponse({'status': 'ok'})
+        return JsonResponse({'status': 'ok', 'papayas': list(Papaya.objects.values().all())})
     def post(self, request):
         our_data = json.loads(request.body.decode())
         print(our_data, type(our_data))
