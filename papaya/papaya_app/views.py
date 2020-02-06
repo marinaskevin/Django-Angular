@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.views import View
-from .models import Papaya
+from .models import Papaya, Task
 import json
 
 # Create your views here.
@@ -21,3 +21,7 @@ class PapayaDetails(View):
         return JsonResponse({'status': 'ok'})
     def delete(self, request, papaya_id):
         return JsonResponse({'status': 'ok'})
+
+class Tasks(View):
+    def get(self, request, *args, **kwargs):
+        return JsonResponse({'status': 'okay'})

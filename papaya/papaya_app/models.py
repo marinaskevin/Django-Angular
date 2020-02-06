@@ -6,3 +6,6 @@ from django.conf import settings
 class Papaya(models.Model):
     id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, primary_key=True)
     name = models.CharField(max_length=200)
+
+class Task(models.Model):
+    id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, primary_key=True)

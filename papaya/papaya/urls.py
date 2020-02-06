@@ -14,9 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
-from papaya_app.views import Papayas, PapayaDetails
+from papaya_app.views import Papayas, PapayaDetails, Tasks
 
 urlpatterns = [
     path( 'papaya', Papayas.as_view() ),
-    path( 'papaya/<int:papaya_id>', PapayaDetails.as_view() )
+    path( 'papaya/<int:papaya_id>', PapayaDetails.as_view() ),
+    path( 'tasks', Tasks.as_view() )
 ]
